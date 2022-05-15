@@ -22,3 +22,22 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+1:vue-cli脚手架初始化项目。
+node + webpack + 淘宝镜像
+
+```
+vue create app
+```
+
+
+
+
+
+VUEX安装
+```
+cnpm install --save vuex@3
+```
+
+19

@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header/>
+    <router-view></router-view>
+    <Fooder v-show="$route.meta.show"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header'
+import Fooder from './components/Fooder'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Fooder
+  },
+  mounted(){
+     // 通知Vuex发请求，获取数据，存储于仓库当中
+    this.$store.dispatch('categoryList');
   }
 }
 </script>
@@ -23,6 +31,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
